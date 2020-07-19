@@ -16,7 +16,7 @@ app.get('/run/:task', (req, res) => {
 
   console.log(task)
   require(`./tasks/${task}`)
-  res.send(`Success: ${task}`)
+  res.send(`Requested: ${task}`)
 })
 
 app.listen(port)
