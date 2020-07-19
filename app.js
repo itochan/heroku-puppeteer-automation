@@ -11,6 +11,12 @@ if (user && password) {
   app.use(basicAuth(user, password))
 }
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/run/:task', (req, res) => {
+  let { task } = req.params
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+  console.log(task)
+  require(`./tasks/${task}`)
+  res.send(`Requested: ${task}`)
+})
+
+app.listen(port)
