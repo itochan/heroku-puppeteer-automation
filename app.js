@@ -14,13 +14,8 @@ if (user && password) {
 app.get('/run/:task', (req, res) => {
   let { task } = req.params
 
-  const script = require(`./tasks/${task}`)
-  try {
-    script.run()
-  } catch (error) {
-    res.send(error)
-    return
-  }
+  console.log(task)
+  require(`./tasks/${task}`)
   res.send(`Success: ${task}`)
 })
 
