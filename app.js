@@ -23,4 +23,4 @@ app.get('/run/:task', (req, res) => {
   res.send(`Success: ${task}`)
 })
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(port)
